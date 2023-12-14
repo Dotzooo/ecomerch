@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 
 import "../../assets/components/admin/header.scss";
-import { FaArrowLeft, FaChalkboardUser } from "react-icons/fa6";
+import { FaArrowLeft, FaChalkboardUser, FaList, FaWarehouse } from "react-icons/fa6";
 
 export default function AdminHeader() {
   const location = useLocation();
@@ -16,10 +16,12 @@ export default function AdminHeader() {
     {
       path: "/admin/product",
       name: "產品列表",
+      icon: <FaWarehouse className="me-2" />,
     },
     {
       path: "/admin/orders",
       name: "訂單列表",
+      icon: <FaList className="me-2" />,
     },
   ];
 
@@ -50,7 +52,7 @@ export default function AdminHeader() {
               >
                 <Link className="nav-link text-center" to={link.path}>
                   {link.icon}
-                  <span className="ml-2">{link.name}</span>
+                  <span>{link.name}</span>
                 </Link>
               </li>
             );
