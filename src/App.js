@@ -1,51 +1,31 @@
-import logo from "./logo.svg";
+import { Routes, Route } from "react-router-dom";
+
+import Home from "./pages/Home";
+import Product from './pages/Product';
+import Admin from "./pages/Admin";
+import AdminDashboard from "./pages/AdminDashboard";
+import AdminProduct from "./pages/AdminProduct";
+
 import "./assets/all.scss";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <button type="button" className="btn btn-primary">
-          Primary
-        </button>
-        <button type="button" className="btn btn-secondary">
-          Secondary
-        </button>
-        <button type="button" className="btn btn-success">
-          Success
-        </button>
-        <button type="button" className="btn btn-danger">
-          Danger
-        </button>
-        <button type="button" className="btn btn-warning">
-          Warning
-        </button>
-        <button type="button" className="btn btn-info">
-          Info
-        </button>
-        <button type="button" className="btn btn-light">
-          Light
-        </button>
-        <button type="button" className="btn btn-dark">
-          Dark
-        </button>
-
-        <button type="button" className="btn btn-link">
-          Link
-        </button>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container-fluid">
+      <div className="row">
+        <header>
+          EcoMerch
+        </header>
+        <main>
+          <Routes>
+            <Route path="/" element={ <Home /> }></Route>
+            <Route path="/product" element={<Product />}></Route>
+            <Route path="/admin" element={<Admin />}>
+              <Route index element={ <AdminDashboard /> }></Route>
+              <Route path="product" element={ <AdminProduct /> }></Route>
+            </Route>
+          </Routes>
+        </main>
+      </div>
     </div>
   );
 }
