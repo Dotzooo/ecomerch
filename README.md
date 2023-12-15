@@ -5,7 +5,7 @@ online shop
 - FrontEnd
 https://dotzooo.github.io/ecomerch
 - BackEnd
-http://dotzooo.github.io/#/admin
+https://dotzooo.github.io/ecomerch/#/admin
 
 ## plugin
 - sass
