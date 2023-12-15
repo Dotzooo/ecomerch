@@ -1,71 +1,41 @@
-.main-sidebar {
-  top: 0;
-  position: fixed;
-  height: 100vh;
-  background: #fff;
-  z-index: 1070;
-  will-change: transform;
-  transition: -webkit-transform 0.2s ease-in-out;
-  transition: transform 0.2s ease-in-out;
 
-  .toggle-sidebar {
-    position: absolute;
-    right: 0;
-    height: 100%;
-    padding: 1.25rem;
-    font-size: 1.25rem;
-    border-left: 1px solid #e1e5eb;
-  }
+.main-navbar{
+    box-shadow: 0 0.125rem 0.625rem rgba(90,97,105,.12);
 
-  .nav-wrapper {
-    overflow-y: auto;
-    overflow-x: hidden;
-    height: calc(100vh - 3.75rem - 1px);
-
-    .nav {
-      display: flex;
-      flex-wrap: wrap;
-      padding-left: 0;
-      margin-bottom: 0;
-      list-style: none;
-
-      .nav-item {
+    .navbar {
+        height: 3.75rem;
         
-        &.active,
-        &:hover {
-          box-shadow: inset 0.1875rem 0 0 #007bff;
-          background-color: #fbfbfb;
-          color: #007bff;
+        .search-bar {
+            .input-group {
+                min-width: 7.5rem;
+    
+                &-prepend{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    z-index: 7;
+    
+                    .input-group-text {
+                        padding: .75rem .625rem;
+                        background: transparent;
+                        border: none;
+                    }
+                }
+                .navbar-search {
+                    border: none;
+                    padding: 0.5rem 0.75rem 0.5rem 2.5rem;
+                }
+            }
+        }
+        
+        .notifications {
+            min-width: 3.75rem;
         }
 
-        .nav-link {
-          white-space: nowrap;
-          min-width: 100%;
-          max-width: 100%;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          will-change: background-color, box-shadow, color;
-          transition:
-            box-shadow 0.2s ease,
-            color 0.2s ease,
-            background-color 0.2s ease;
-          font-size: 0.85rem;
-          border-bottom: 1px solid #e1e5eb;
-          font-weight: 400;
-          color: #3d5170;
-          padding: 0.9375rem 1.5625rem;
-
-          &:hover {
-            box-shadow: inset 0.1875rem 0 0 #007bff;
-            background-color: #fbfbfb;
-            color: #007bff;
-          }
+        .admin-profile {
+            min-width: 3.75rem;
+    
         }
-      }
     }
-  }
-}
-
-.main-navbar .navbar {
-  height: 3.75rem;
 }
