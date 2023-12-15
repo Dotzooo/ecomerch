@@ -14,7 +14,7 @@ export default function AdminNavbar() {
   const location = useLocation();
 
   const [isCollapsed, setIsCollapsed] = useState(true);
-  const navbarRef = useRef(null);
+  const navbarRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const navbarNav = navbarRef.current;

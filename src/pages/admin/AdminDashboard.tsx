@@ -1,6 +1,9 @@
+// import AnimatedNumber from '../../components/Icon';
+
 import '../../assets/components/admin/dashboard.scss';
 
 export default function AdminDashboard() {
+
   return (
     <div className="dashboard px-4">
       <div className="page-header row no-gutters py-4">
@@ -9,6 +12,7 @@ export default function AdminDashboard() {
           <h3 className="page-title">Blog Overview</h3>
         </div>
       </div>
+      {/* <AnimatedNumber value={numberValue} /> */}
     </div>
   );
 }

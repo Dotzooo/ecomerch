@@ -7,13 +7,18 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { HashRouter } from 'react-router-dom';
 import { IconContext } from 'react-icons';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <IconContext.Provider value={{ size: 20, color: '#000' }}>
+const root = document.getElementById('root');
+if (root) {
+  const rootElement = ReactDOM.createRoot(root);
+  rootElement.render(
+    <IconContext.Provider value={{ size: '20px', color: '#000' }}>
     <React.StrictMode>
       <HashRouter>
         <App />
       </HashRouter>
     </React.StrictMode>
-  </IconContext.Provider>
-);
+    </IconContext.Provider>
+  );
+} else {
+  console.error('Failed to find the root element');
+}
