@@ -2,8 +2,7 @@ import { IoMdSearch } from "react-icons/io";
 import { TbBellRinging } from "react-icons/tb";
 import { BsFillPersonFill } from "react-icons/bs";
 
-import '../../assets/components/admin/header.scss';
- 
+import "../../assets/components/admin/header.scss";
 
 export default function AdminHeader() {
   return (
@@ -24,7 +23,10 @@ export default function AdminHeader() {
             </div>
           </form>
           <div className="notifications d-flex justify-content-center align-items-center border-start">
-            <button type="button" className="position-relative border-0 bg-transparent">
+            <button
+              type="button"
+              className="position-relative border-0 bg-transparent"
+            >
               <TbBellRinging />
               <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                 99+

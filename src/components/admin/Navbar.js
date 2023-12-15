@@ -1,26 +1,54 @@
-import { Link, useLocation } from 'react-router-dom';
+import { useState, useEffect, useRef } from "react";
+import { Link, useLocation } from "react-router-dom";
 
-import '../../assets/components/admin/navbar.scss';
-import { FaArrowLeft, FaChalkboardUser, FaList, FaWarehouse } from 'react-icons/fa6';
+import "../../assets/components/admin/navbar.scss";
+import {
+  FaArrowLeft,
+  FaChalkboardUser,
+  FaList,
+  FaWarehouse,
+  FaAlignJustify
+} from "react-icons/fa6";
 
 export default function AdminNavbar() {
   const location = useLocation();
 
+  const [isCollapsed, setIsCollapsed] = useState(true);
+  const navbarRef = useRef(null);
+
+  useEffect(() => {
+    const navbarNav = navbarRef.current;
+
+    if (navbarNav) { 
+
+      const handleShow = () => setIsCollapsed(false);
+      const handleHide = () => setIsCollapsed(true);
+
+      navbarNav.addEventListener('show.bs.collapse', handleShow);
+      navbarNav.addEventListener('hide.bs.collapse', handleHide);
+    
+      return () => {
+        navbarNav.removeEventListener('show.bs.collapse', handleShow);
+        navbarNav.removeEventListener('hide.bs.collapse', handleHide);
+      };
+    }
+  }, []);
+  
   // TODO: 改成 redux
   const navLinks = [
     {
-      path: '/admin',
-      name: 'DashBoard',
+      path: "/admin",
+      name: "DashBoard",
       icon: <FaChalkboardUser className="me-2" />,
     },
     {
-      path: '/admin/product',
-      name: '產品列表',
+      path: "/admin/product",
+      name: "產品列表",
       icon: <FaWarehouse className="me-2" />,
     },
     {
-      path: '/admin/orders',
-      name: '訂單列表',
+      path: "/admin/orders",
+      name: "訂單列表",
       icon: <FaList className="me-2" />,
     },
   ];
@@ -35,18 +63,26 @@ export default function AdminNavbar() {
           >
             <span className="d-inline-block d-md-inline ml-1">EcoMerch</span>
           </Link>
-          <a className="toggle-sidebar d-sm-inline d-md-none d-lg-none">
-            <FaArrowLeft />
-          </a>
+        
+          <button
+            className="navbar-toggler toggle-sidebar shadow-none border-0 border-start rounded-0 d-md-none"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded={!isCollapsed}
+            aria-label="Toggle navigation"
+          >
+            {isCollapsed ? <FaAlignJustify /> : <FaArrowLeft />}
+          </button>
         </nav>
       </div>
-      <div className="nav-wrapper">
+      <div className="nav-wrapper collapse navbar-collapse d-md-block" id="navbarNav" ref={ navbarRef }>
         <ul className="flex-column nav">
           {navLinks.map((link, index) => {
             return (
               <li
                 className={`nav-item ${
-                  location.pathname === link.path ? 'active' : ''
+                  location.pathname === link.path ? "active" : ""
                 }`}
                 key={index}
               >
