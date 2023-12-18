@@ -43,7 +43,7 @@ export default function AdminNavbar() {
     },
     {
       path: "/admin/product",
-      name: "產品列表",
+      name: "商品列表",
       icon: <FaWarehouse className="me-2" />,
     },
     {
