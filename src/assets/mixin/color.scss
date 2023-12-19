@@ -1,0 +1,10 @@
+// 使用 mixin 的地方
+// .myElement {
+//   @include customBackground(rgb(93, 0, 224), #c42cb7);
+// }
+
+@mixin customBackground($textColor, $mainColor, $gradientColor) {
+  color: $textColor;
+  background: $mainColor;
+  background-image: linear-gradient(270deg, $gradientColor, $mainColor);
+}

@@ -1,0 +1,44 @@
+@import '../../mixin/color.scss';
+
+
+.overview {
+  &-card {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #13002d;
+    background: #271c37;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+
+    .icon {
+      max-width: 46px;
+      width: 100%;
+      height: 46px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      margin-right: 20px;
+      background: rgba(74, 108, 247, 0.1);
+      color: #5f00e1;
+      font-weight: 700;
+
+      &.purple {
+        @include customBackground(#fff, rgb(93, 0, 224), #c42cb7);
+      }
+      
+      &.green {
+        @include customBackground(#fff, #00b24c, #009688);
+      }
+      
+      &.orange {
+        @include customBackground(#fff, #e04d46, #e91e63);
+      }
+      
+      &.yellow {
+        @include customBackground(#fff, #e0bf46, #e68127);
+      }
+    }
+  }
+}
