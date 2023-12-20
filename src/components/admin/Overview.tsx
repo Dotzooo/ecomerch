@@ -20,8 +20,8 @@ export default function Overview(props: OverviewProps) {
             <div className="overview-card rounded">
               <div className={`icon ${item.className}`}>{item.icon}</div>
               <div className="content">
-                <p className="text-white m-0">{item.title}</p>
-                <p className="text-white m-0">{item.nums}</p>
+                <p className="fs-6 text-white m-0">{item.title}</p>
+                <p className="fs-3 fw-bold text-white m-0">{item.nums}</p>
               </div>
             </div>
           </div>
