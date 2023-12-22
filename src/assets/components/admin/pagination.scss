@@ -1,0 +1,11 @@
+.pagination .page-link {
+  color: #000;
+//   background-color: #271c37;
+//   border-color: #13002d;
+}
+
+.pagination .page-item.active .page-link {
+  color: #ffffff;
+  background-color: #271c37;
+  border-color: #13002d;
+}
