@@ -21,4 +21,3 @@ export default function PaginationComponent({
   );
 }
 
-<style lang="scss"></style>;
