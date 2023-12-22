@@ -1,0 +1,27 @@
+.status-btn {
+  padding: 7px 15px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 400;
+  border: none;
+
+  &.preparing {
+    color: brown;
+    background: rgba(33, 150, 83, 0.1);
+  }
+
+  &.shipping {
+    color: blue;
+    background: rgba(33, 150, 83, 0.1);
+  }
+
+  &.completed {
+    color: green;
+    background: rgba(33, 150, 83, 0.1);
+  }
+
+  &.cancelled {
+    color: red;
+    background: rgba(33, 150, 83, 0.1);
+  }
+}
