@@ -39,7 +39,7 @@ export default function AdminOrder() {
 
   const headerTitles: string[] = [
     "訂單編號",
-    "購買人",
+    "訂購人",
     "訂單金額",
     "貨運狀態",
     "操作",
