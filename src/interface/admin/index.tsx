@@ -1,3 +1,8 @@
+
+export interface ProtectedRouteProps {
+  isLoggedIn: boolean;
+}
+
 export interface Orders {
   id: string;
   name: string;

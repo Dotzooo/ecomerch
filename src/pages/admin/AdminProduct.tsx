@@ -101,6 +101,7 @@ export default function AdminProduct() {
       sold: 687
     },
   ];
+  
   return (
     <div>
       <Breadcrumb pageName="Products" pageTitle="商品管理" />
@@ -117,21 +118,21 @@ export default function AdminProduct() {
             title="上架中商品: 30680"
             headerCol={headerTitles}
             tableData={fake_orders}
-          />{" "}
+          />
         </Tab>
         <Tab eventKey="unSelling" title="未上架">
           <Table
             title="未上架商品: 14000"
             headerCol={headerTitles}
             tableData={fake_orders}
-          />{" "}
+          />
         </Tab>
         <Tab eventKey="soldOut" title="已售完">
           <Table
             title="已售完商品: 8000"
             headerCol={headerTitles}
             tableData={fake_orders}
-          />{" "}
+          />
         </Tab>
       </Tabs>
     </div>
