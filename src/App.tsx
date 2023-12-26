@@ -1,4 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { RootState } from "./store";
 
 import FrontHeader from "./components/front/Header";
 import Home from "./pages/Home";
@@ -17,13 +21,17 @@ import "./assets/all.scss";
 function App() {
   const location = useLocation();
 
-  const isLoggedIn = false;
+  const isLoggin = useSelector((state: RootState) => {
+    return state.login.isLoggedIn
+  })
+  console.log(isLoggin)
+
   // 檢查是否後台路由
   const isAdminRoute = location.pathname.startsWith("/admin");
-  
-  // 根据是否为后台路由和是否已登录决定是否显示 AdminNavbar
-  const showAdminNavbar = isAdminRoute && isLoggedIn;
 
+  // 根据是否为后台路由和是否已登录决定是否显示 AdminNavbar
+  const showAdminNavbar = isAdminRoute && isLoggin;
+  
   return (
     <div className="container-fluid">
       <div className="row">
@@ -42,7 +50,7 @@ function App() {
           {/* 後台路由 */}
           <Route path="/admin/login" element={<AdminLogin />} />
 
-          <Route element={<ProtectedRoute isLoggedIn={isLoggedIn} />}>
+          <Route element={<ProtectedRoute isLoggedIn={isLoggin} />}>
             <Route path="/admin" element={<Admin />}>
               <Route index element={<AdminDashboard />}></Route>
               <Route path="product" element={<AdminProduct />}></Route>

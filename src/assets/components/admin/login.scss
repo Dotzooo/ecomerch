@@ -14,56 +14,49 @@ $colors: (
   @return map-get($colors, $key);
 }
 
-html {
-  font-size: 14px;
-}
-
-body {
+.login-container {
   background: linear-gradient(to bottom, color("base"), color("ice"));
   color: color("base");
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-}
+  font-size: 14px;
 
-/**
- * Tiles
- */
+  .login {
+    background-color: color("ice");
+    border-radius: 8px;
+    box-shadow:
+      0 0.75rem 1.5rem rgba(0, 0, 0, 0.2),
+      0 0.25rem 0.25rem rgba(0, 0, 0, 0.2);
+    position: relative;
+    width: 100%;
+    min-width: 320px;
+    max-width: 24rem;
+    overflow: hidden;
+    padding: 0 !important;
 
-.login {
-  background-color: color("ice");
-  border-radius: 8px;
-  box-shadow:
-    0 0.75rem 1.5rem rgba(0, 0, 0, 0.2),
-    0 0.25rem 0.25rem rgba(0, 0, 0, 0.2);
-  position: relative;
-  width: 100%;
-  min-width: 320px;
-  max-width: 24rem;
-  overflow: hidden;
-  padding: 0 !important;
+    .login-header {
+      background-image: url("https://images.unsplash.com/photo-1638846964925-9ba986f3d648?q=80&w=2960&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+      background-position: center;
+      background-size: cover;
+      height: 12rem;
 
-  .login-header {
-    background-image: url("https://images.unsplash.com/photo-1638846964925-9ba986f3d648?q=80&w=2960&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
-    background-position: center;
-    background-size: cover;
-    height: 12rem;
-
-    .login-title {
-      display: flex;
-      height: 100%;
-      justify-content: center;
-      align-items: center;
-      font-family: Monoton, sans-serif;
-      font-size: 4rem;
-      color: #fff;
-      opacity: 0.75;
+      .login-title {
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        font-family: Monoton, sans-serif;
+        font-size: 4rem;
+        color: #fff;
+        opacity: 0.75;
+      }
     }
-  }
 
-  .login-body {
-    padding: 2rem;
+    .login-body {
+      padding: 2rem;
+    }
   }
 }
 
@@ -253,7 +246,7 @@ body {
       transform: scale(0.6, 1.5);
       background-color: color("irenic");
       border-radius: 50%;
-      opacity: 1;    
+      opacity: 1;
       width: 90px;
       top: 3px;
 
