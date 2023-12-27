@@ -34,8 +34,7 @@ export default function AdminLogin() {
       const res = await axios.post("/v2/admin/signin", data);
 
       if (res) {
-        axios.defaults.headers.common["Authorization"] =
-          `Bearer ${res.data.token}`;
+        axios.defaults.headers.common["Authorization"] = res.data.token;
         dispatch(setLoggedIn(true));
         navigate("/admin");
       }

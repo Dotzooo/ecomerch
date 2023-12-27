@@ -6,7 +6,7 @@ export const loginSlice = createSlice({
     isLoggedIn: false,
   },
   reducers: {
-    // 定義 reducer 函數
+    // 登入/登出
     setLoggedIn: (state, action) => {
       state.isLoggedIn = action.payload;
     },

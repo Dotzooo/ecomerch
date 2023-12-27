@@ -1,10 +1,29 @@
+import axios from "axios";
+import { useDispatch } from "react-redux";
+
 import { IoMdSearch } from "react-icons/io";
 import { TbBellRinging } from "react-icons/tb";
 import { BsFillPersonFill } from "react-icons/bs";
 
 import "../../assets/components/admin/header.scss";
+import { setLoggedIn } from "../../slice/admin/loginSlice";
 
 export default function AdminHeader() {
+  const dispatch = useDispatch();
+  
+  const logout = async () => {
+    try {
+      axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL;
+
+      const res = await axios.post("/v2/logout");
+      console.log(res);
+
+      dispatch(setLoggedIn(false));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <div className="main-navbar bg-white sticky-top">
       <div className="p-0 container-fluid">
@@ -35,34 +54,28 @@ export default function AdminHeader() {
           </div>
           <div className="admin-profile d-flex justify-content-center align-items-center border-start">
             <div className="nav-item dropdown">
-              <button
-                id="navbarDropdown"
-                className="dropdown-toggle border-0 bg-transparent"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                <BsFillPersonFill />
-              </button>
-              {/* <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li>
-                  <a className="dropdown-item" href="#">
-                    <i className="fas fa-sliders-h fa-fw"></i> Account
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    <i className="fas fa-cog fa-fw"></i> Settings
-                  </a>
-                </li>
-                <li>
-                  <hr className="dropdown-divider" />
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    <i className="fas fa-sign-out-alt fa-fw"></i> Log Out
-                  </a>
-                </li>
-              </ul> */}
+              <div className="dropdown">
+                <button
+                  className="btn btn-secondary dropdown-toggle border-0 bg-transparent"
+                  type="button"
+                  id="dropdownMenuButton1"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <BsFillPersonFill />
+                </button>
+                <ul
+                  className="dropdown-menu dropdown-menu-end dropdown-menu-lg-start"
+                  style={{ left: "-6.5rem", top: "3rem" }}
+                  aria-labelledby="dropdownMenuButton1"
+                >
+                  <li>
+                    <div className="dropdown-item" onClick={logout}>
+                      LOG OUT
+                    </div>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </nav>
