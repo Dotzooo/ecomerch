@@ -1,5 +1,5 @@
+import http from "../../api/index";
 import { useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
@@ -29,12 +29,9 @@ export default function AdminLogin() {
   const signIn = async () => {
     setIsPending(true);
     try {
-      axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL;
-
-      const res = await axios.post("/v2/admin/signin", data);
+      const res = await http.post("/v2/admin/signin", data);
 
       if (res) {
-        axios.defaults.headers.common["Authorization"] = res.data.token;
         dispatch(setLoggedIn(true));
         navigate("/admin");
       }
@@ -84,9 +81,9 @@ export default function AdminLogin() {
           <div className="submit-container d-flex justify-content-end">
             <div
               id="submit"
-              className={`btn btn-irenic ${
-                isPending ? "pending" : ""
-              } ${isGranted ? "granted" : ""}`}
+              className={`btn btn-irenic ${isPending ? "pending" : ""} ${
+                isGranted ? "granted" : ""
+              }`}
               onClick={signIn}
             >
               <span>SIGN IN</span>

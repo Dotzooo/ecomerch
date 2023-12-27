@@ -1,4 +1,4 @@
-import axios from "axios";
+import http from '../../api/index'
 import { useDispatch } from "react-redux";
 
 import { IoMdSearch } from "react-icons/io";
@@ -6,19 +6,19 @@ import { TbBellRinging } from "react-icons/tb";
 import { BsFillPersonFill } from "react-icons/bs";
 
 import "../../assets/components/admin/header.scss";
-import { setLoggedIn } from "../../slice/admin/loginSlice";
+import { setLoggedOut } from "../../slice/admin/loginSlice";
+
 
 export default function AdminHeader() {
   const dispatch = useDispatch();
   
   const logout = async () => {
     try {
-      axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL;
 
-      const res = await axios.post("/v2/logout");
+      const res = await http.post("/v2/logout");
       console.log(res);
 
-      dispatch(setLoggedIn(false));
+      dispatch(setLoggedOut());
     } catch (err) {
       console.log(err);
     }
