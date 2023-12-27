@@ -1,4 +1,4 @@
-import http from '../../api/index'
+import http from "../../api/index";
 import { useDispatch } from "react-redux";
 
 import { IoMdSearch } from "react-icons/io";
@@ -8,15 +8,12 @@ import { BsFillPersonFill } from "react-icons/bs";
 import "../../assets/components/admin/header.scss";
 import { setLoggedOut } from "../../slice/admin/loginSlice";
 
-
 export default function AdminHeader() {
   const dispatch = useDispatch();
-  
+
   const logout = async () => {
     try {
-
-      const res = await http.post("/v2/logout");
-      console.log(res);
+      await http.post("/v2/logout");
 
       dispatch(setLoggedOut());
     } catch (err) {
