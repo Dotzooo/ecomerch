@@ -82,14 +82,12 @@ export default function AdminLogin() {
             <div className="underline"></div>
           </label>
 
-          <div className="submit-container clearfix">
+          <div className="submit-container d-flex justify-content-end">
             <div
               id="submit"
-              role="button"
-              className={`btn btn-irenic float-right ${
+              className={`btn btn-irenic ${
                 isPending ? "pending" : ""
               } ${isGranted ? "granted" : ""}`}
-              tabIndex={1}
               onClick={signIn}
             >
               <span>SIGN IN</span>

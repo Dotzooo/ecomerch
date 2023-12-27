@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i|Monoton");
 
 $colors: (
-  irenic: #07beb8,
+  irenic: #007bff,
   serene: #3dccc7,
   tranquil: #68d8d6,
   calm: #9ceaef,
@@ -168,13 +168,16 @@ $colors: (
  */
 
 @mixin btn-variant($background-color) {
-  background-color: $background-color;
-  color: white;
+  color: #868e96 !important;
+  background-color: white !important;
+  font-family: Monoton, sans-serif;
 
   &:hover,
   &:focus,
   &:active {
-    background-color: darken($background-color, 5%);
+    color: $background-color !important;
+    background-color: white !important;
+    border-color: transparent !important;;
   }
 }
 
@@ -207,19 +210,6 @@ $colors: (
 }
 
 /**
- * Utilities
- */
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.float-right {
-  float: right;
-}
-
-/**
  *
  */
 .submit-container {
@@ -235,11 +225,12 @@ $colors: (
       transform 0.1s ease-in,
       opacity 0.1s ease-in,
       border-radius 0.1s ease-in;
-    right: -10px;
 
     span {
-      opacity: 1;
-      transition: opacity 0.1s ease-in;
+      // opacity: 1;
+      // transition: opacity 0.1s ease-in;
+      font-family: Monoton, sans-serif;
+      letter-spacing: 1px;
     }
 
     &.pending {
@@ -247,7 +238,7 @@ $colors: (
       background-color: color("irenic");
       border-radius: 50%;
       opacity: 1;
-      width: 90px;
+      // width: 90px;
       top: 3px;
 
       span {
@@ -286,8 +277,8 @@ $colors: (
   }
 
   .login-pending {
-    height: 3rem;
-    width: 3rem;
+    height: 2rem;
+    width: 2rem;
     background-color: color("irenic");
     position: absolute;
     border-radius: 50%;
