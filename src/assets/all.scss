@@ -19,5 +19,12 @@
 // @import "bootstrap/scss/helpers";
 // @import "bootstrap/scss/utilities/api";
 
-@import "bootstrap/scss/bootstrap"
-
+@import "bootstrap/scss/bootstrap";
+body {
+  margin: 0;
+}
+html,
+body,
+#root {
+  height: 100%;
+}

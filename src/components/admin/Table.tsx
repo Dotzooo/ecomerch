@@ -14,7 +14,7 @@ export default function Table({ title, headerCol, tableData }: TableProps) {
   const [currentPage, setCurrentPage] = useState(1);
   const [showDialog, setShowDialog] = useState(false);
   const [dialogData, setDialogData] = useState([]);
-  console.log(dialogData);
+  console.log('Table data:', dialogData);
   const itemsPerPage = 5;
   const totalPages = tableData ? Math.ceil(tableData.length / itemsPerPage) : 0;
   const [validated, setValidated] = useState(false);

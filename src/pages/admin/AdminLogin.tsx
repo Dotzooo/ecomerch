@@ -15,7 +15,6 @@ export default function AdminLogin() {
 
   const [isPending, setIsPending] = useState(false);
   const [isGranted, setIsGranted] = useState(false);
-  // const formRef = useRef<HTMLFormElement>(null);
 
   const navigate = useNavigate();
 

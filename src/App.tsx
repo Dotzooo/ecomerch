@@ -31,8 +31,8 @@ function App() {
   const showAdminNavbar = isAdminRoute && isLoggin;
   
   return (
-    <div className="container-fluid">
-      <div className="row">
+    // <div>
+      <div>
         {/* 根據路徑渲染對應的 header */}
         {!isAdminRoute ? (
           <FrontHeader />
@@ -57,7 +57,6 @@ function App() {
           </Route>
         </Routes>
       </div>
-    </div>
   );
 }
 

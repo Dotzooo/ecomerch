@@ -14,7 +14,7 @@ type AuthToken = string | null;
 instance.interceptors.request.use((config) => {
   const authToken: AuthToken = localStorage.getItem("authToken");
   if (authToken) {
-    config.headers.Authorization = `${authToken}`;
+    config.headers.authorization = `${authToken}`;
   }
   return config;
 });

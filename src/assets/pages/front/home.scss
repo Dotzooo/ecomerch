@@ -1,0 +1,39 @@
+.cover {
+  &-title {
+    text-align: center;
+    color: black;
+    animation: fade-in;
+    animation-duration: 8s;
+
+    &__text {
+      font-size: 5vw;
+      letter-spacing: 1.5rem;
+      padding-left: 2rem;
+    }
+
+    &__info {
+      letter-spacing: 0.25rem;
+    }
+  }
+}
+
+.story {
+  background-color: #030f12;
+
+  &-title {
+    text-align: center;
+    color: #fff;
+    animation: fade-in;
+    animation-duration: 8s;
+
+    &__text {
+      font-size: 5vw;
+      letter-spacing: 1.5rem;
+      padding-left: 2rem;
+    }
+
+    &__info {
+      letter-spacing: 0.25rem;
+    }
+  }
+}
